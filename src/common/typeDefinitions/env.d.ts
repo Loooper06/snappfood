@@ -14,5 +14,11 @@ namespace NodeJS {
     ACCESS_TOKEN_SECRET: string;
     EMAIL_TOKEN_SECRET: string;
     PHONE_TOKEN_SECRET: string;
+
+    //! S3
+    S3_ACCESS_KEY: string;
+    S3_SECRET_KEY: string;
+    S3_BUCKET_NAME: string;
+    S3_ENDPOINT: string;
   }
 }
