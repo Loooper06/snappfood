@@ -1,7 +1,8 @@
 import { BaseEntity } from 'src/common/abstracts/base.entity';
 import { EntityName } from 'src/common/enums/entity-name.enum';
-import { Column, Entity, OneToMany } from 'typeorm';
+import { Column, Entity, JoinColumn, OneToMany, OneToOne } from 'typeorm';
 import { UserAddressEntity } from './address.entity';
+import { OtpEntity } from './otp.entity';
 
 @Entity(EntityName.User)
 export class UserEntity extends BaseEntity {
@@ -11,15 +12,23 @@ export class UserEntity extends BaseEntity {
   last_name: string;
   @Column({ unique: true })
   mobile: string;
+  @Column({ nullable: true, default: false })
+  mobile_verify: boolean;
   @Column({ nullable: true, unique: true })
   email: string;
-  @Column({ unique: true })
+  @Column({ unique: true, nullable: true })
   invite_code: string;
   @Column({ default: 0 })
   score: number;
   @Column({ nullable: true })
   agentId: number;
+  @Column({ nullable: true })
+  otpId: number;
 
   @OneToMany(() => UserAddressEntity, (address) => address.user)
   addressList: UserAddressEntity[];
+
+  @OneToOne(() => OtpEntity, (otp) => otp.user)
+  @JoinColumn()
+  otp: OtpEntity;
 }

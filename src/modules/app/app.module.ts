@@ -6,6 +6,7 @@ import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { TypeOrmConfig } from 'src/config/typeorm.config';
 import { CategoryModule } from '../category/category.module';
+import { AuthModule } from '../auth/auth.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { CategoryModule } from '../category/category.module';
     }),
     TypeOrmModule.forRoot(TypeOrmConfig()),
     CategoryModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
