@@ -17,6 +17,9 @@ export enum ConflictMessage {
   Email = 'ایمیل وارد شده نمی تواند ثبت شود',
   Phone = 'موبایل وارد شده نمی تواند ثبت شود',
   Username = 'نام کاربری وارد شده نمی تواند ثبت شود',
+  Supplier = 'فروشگاهی قبلا با این شماره تماس ثبت شده است',
+  SupplierNational_Code = 'فروشگاهی قبلا با این کد ملی ثبت شده است',
+  SupplierEmail = 'فروشگاهی قبلا با این ایمیل ثبت شده است',
 }
 
 export enum NotFoundMessage {
@@ -33,11 +36,11 @@ export enum ValidationMessage {
 }
 
 export enum PublicMessage {
-  
   Created = 'با موفقیت ایجاد شد',
   Deleted = 'با موفقیت حذف شد',
   Updated = 'با موفقیت بروز رسانی شد',
   Inserted = 'با موفقیت اضافه شد',
+  Uploaded = 'مدارک با موفقیت بارگذاری شد',
 }
 
 export enum ForbiddenMessage {

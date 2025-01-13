@@ -2,7 +2,7 @@ import { BaseEntity } from 'src/common/abstracts/base.entity';
 import { EntityName } from 'src/common/enums/entity-name.enum';
 import { Column, Entity, JoinColumn, OneToMany, OneToOne } from 'typeorm';
 import { UserAddressEntity } from './address.entity';
-import { OtpEntity } from './otp.entity';
+import { OtpEntity } from './user-otp.entity';
 
 @Entity(EntityName.User)
 export class UserEntity extends BaseEntity {
